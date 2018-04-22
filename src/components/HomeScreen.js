@@ -1,33 +1,45 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 
-import { Link } from './Routing'; // eslint-disable-line import/no-unresolved, import/extensions
+import { HOME } from '../constants/routes';
+import Navigation from './Navigation';
+import Logo from '../assets/images/fragged-empire-logo.png';
 
 const styles = StyleSheet.create({
-  view: {
-    flex: 3,
-    alignItems: 'center',
+  appHeader: {
+    backgroundColor: '#222',
+    padding: 5,
     justifyContent: 'center',
+    alignItems: 'center',
   },
-  boldText: {
+  headerImage: {
+    width: 250,
+    height: 200,
+  },
+  appTitle: {
     fontFamily: 'zag-bold',
-    fontSize: 20,
+    fontSize: 16,
+    color: 'white',
   },
-  normalText: {
+  appSubtitle: {
     fontFamily: 'zag-regular',
-    fontSize: 18,
+    color: 'white',
   },
 });
 
 export default () => (
-  <View style={styles.view}>
-    <Text style={styles.boldText}>Home Screen</Text>
-    <Link to="/characters">
-      <Text style={styles.normalText}>Characters</Text>
-    </Link>
-    <Link to="/weapons">
-      <Text style={styles.normalText}>Weapons</Text>
-    </Link>
+  <View>
+    <Navigation current={HOME} />
+    <View style={styles.appHeader}>
+      <Image
+        style={styles.headerImage}
+        resizeMode="contain"
+        source={Logo}
+      />
+      <Text style={styles.appTitle}>Archon</Text>
+      <Text style={styles.appSubtitle}>Character creator for Fragged Empire</Text>
+    </View>
   </View>
 );
+

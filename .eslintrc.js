@@ -6,6 +6,8 @@ module.exports = {
     'import/prefer-default-export': 0,
     'no-plusplus': 0,
     'import/default': 0,
+    'no-confusing-arrow': 0,
+    "import/no-named-as-default-member": 0,
     'comma-dangle': ['error', {
       arrays: 'always-multiline',
       objects: 'always-multiline',
