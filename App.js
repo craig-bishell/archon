@@ -6,6 +6,11 @@ import { Font } from 'expo';
 import Application from './src/components/Application';
 import store from './src/redux/configureStore';
 
+import ZagRegular from './src/assets/fonts/Zag-Regular.otf';
+import ZagBold from './src/assets/fonts/Zag-Bold.otf';
+import ShadowsIntoLightTwoRegular from './src/assets/fonts/ShadowsIntoLightTwo-Regular.ttf';
+
+
 export default class App extends React.Component {
   constructor(args) {
     super(args);
@@ -18,9 +23,9 @@ export default class App extends React.Component {
 
   async loadFonts() {
     await Font.loadAsync({
-      'zag-regular': require('./src/assets/fonts/Zag-Regular.otf'),
-      'zag-bold': require('./src/assets/fonts/Zag-Bold.otf'),
-      'shadows-into-light-two': require('./src/assets/fonts/ShadowsIntoLightTwo-Regular.ttf'),
+      'zag-regular': ZagRegular,
+      'zag-bold': ZagBold,
+      'shadows-into-light-two': ShadowsIntoLightTwoRegular,
     });
     this.setState({ loading: false });
   }

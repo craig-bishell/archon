@@ -1,7 +1,6 @@
 module.exports = {
   extends: "airbnb",
   rules: {
-    'global-require': 0,
     'max-len': [2, { code: 200, tabWidth: 2 }],
     'quote-props': [2, 'consistent-as-needed'],
     'import/prefer-default-export': 0,

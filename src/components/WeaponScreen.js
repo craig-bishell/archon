@@ -1,5 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+
+import { Link } from './Routing'; // eslint-disable-line import/no-unresolved, import/extensions
 
 const styles = StyleSheet.create({
   view: {
@@ -7,16 +10,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text: {
-    flex: 3,
-    fontFamily: 'zap-bold',
+  boldText: {
+    fontFamily: 'zag-bold',
+    fontSize: 20,
+  },
+  normalText: {
+    fontFamily: 'zag-regular',
     fontSize: 18,
-    textAlign: 'center',
   },
 });
 
 export default () => (
   <View style={styles.view}>
-    <Text style={styles.text}>Weapon Screen</Text>
+    <Text style={styles.boldText}>Weapon Screen</Text>
+    <Link to="/">
+      <Text style={styles.normalText}>Home</Text>
+    </Link>
+    <Link to="/characters">
+      <Text style={styles.normalText}>Characters</Text>
+    </Link>
   </View>
 );
