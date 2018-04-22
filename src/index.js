@@ -1,8 +1,18 @@
+/* eslint-env browser */
 import React from 'react';
+import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+
+import store from './redux/configureStore';
+import Application from './components/Application';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import './index.css';
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Application />
+  </Provider>,
+  document.getElementById('root'),
+);
 registerServiceWorker();
